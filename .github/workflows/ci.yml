@@ -1,0 +1,22 @@
+name: build-and-push-prose-mod-app
+on: [push]
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code from git repository
+        uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
+
+        with:
+          go-version: '1.18'
+
+      - name: Show go version
+        run: go version
+
+      - name: Print working directory
+        run: pwd
+
+      - name: Build
+        run: go build ./prose
