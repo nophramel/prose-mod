@@ -20,3 +20,6 @@ jobs:
 
       - name: Build
         run: go build ./prose
+
+      - name: Unit test
+        run: go test ./prose
